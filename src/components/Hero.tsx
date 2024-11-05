@@ -1,12 +1,21 @@
+// Hero.tsx
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-background/50 z-0" />
-      
+
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,6 +48,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button 
+              onClick={() => scrollToSection('contact')}
               variant="default" 
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -47,6 +57,7 @@ export function Hero() {
               Contacto
             </Button>
             <Button 
+              onClick={() => scrollToSection('projects')}
               variant="outline" 
               size="lg"
               className="border-blue-500/50 hover:bg-blue-500/10"

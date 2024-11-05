@@ -6,17 +6,17 @@ const skills = [
   {
     icon: <Code className="h-6 w-6" />,
     title: "Desarrollo Web",
-    description: "HTML, CSS, JavaScript, React"
+    description: "HTML, CSS, JavaScript, React, Node"
   },
   {
     icon: <Database className="h-6 w-6" />,
     title: "Bases de Datos",
-    description: "SQL, MongoDB"
+    description: "SQL, DynamoDB"
   },
   {
     icon: <Layout className="h-6 w-6" />,
-    title: "Diseño UI/UX",
-    description: "Figma, Adobe XD"
+    title: "Cloud Services",
+    description: "Azure, AWS"
   },
   {
     icon: <Brain className="h-6 w-6" />,

@@ -9,7 +9,7 @@ const projects = [
     title: "Sistema de Gestión",
     description: "Aplicación web para gestión de inventarios y ventas",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["HTML", "Node.js", "Oracle","TailwindCSS"],
     github: "#",
     demo: "#"
   },
@@ -21,14 +21,7 @@ const projects = [
     github: "#",
     demo: "#"
   },
-  {
-    title: "App de Notas",
-    description: "Aplicación para tomar notas con sincronización en la nube",
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2344&auto=format&fit=crop",
-    tags: ["React Native", "Firebase"],
-    github: "#",
-    demo: "#"
-  }
+
 ];
 
 export function Projects() {
