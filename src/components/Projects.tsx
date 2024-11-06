@@ -1,32 +1,51 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: "Sistema de Gestión",
-    description: "Aplicación web para gestión de inventarios y ventas",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop",
-    tags: ["HTML", "Node.js", "Oracle","TailwindCSS"],
-    github: "#",
-    demo: "#"
+    title: 'Sistema de Gestión',
+    description: 'Aplicación web para gestión de inventarios y ventas',
+    image:
+      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop',
+    tags: ['HTML', 'Node.js', 'Oracle', 'TailwindCSS'],
+    github: 'https://github.com/tu-usuario/tu-repo',
+    demo: 'https://tu-demo.com',
   },
   {
-    title: "Portfolio Personal",
-    description: "Sitio web personal con diseño moderno y animaciones",
-    image: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=2340&auto=format&fit=crop",
-    tags: ["React", "Framer Motion", "Tailwind"],
-    github: "#",
-    demo: "#"
+    title: 'Portfolio Personal',
+    description: 'Sitio web personal con diseño moderno y animaciones',
+    image:
+      'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=2340&auto=format&fit=crop',
+    tags: ['React', 'Framer Motion', 'Tailwind'],
+    github: 'https://github.com/yostian07/Portfolio.git',
+    
   },
-
+  {
+    title: 'Visualizador de datos',
+    description: 'Sitio web para ver datos en tiempo real con diseño moderno y animaciones',
+    image:
+      'https://datos.gob.es/sites/default/files/styles/image_json_ld/public/blog/image/plantilla_imagenes_post_7.jpg',
+    tags: ['React', 'Framer Motion', 'Tailwind'],
+    github: 'https://github.com/yostian07/visualizador.git',
+    demo: 'https://datavizglobal.netlify.app',
+  },
 ];
 
 export function Projects() {
   return (
-    <section className="py-20 bg-secondary/30 backdrop-blur-sm" id="projects">
+    <section
+      className="py-20 bg-secondary/30 backdrop-blur-sm"
+      id="projects"
+    >
       <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +54,9 @@ export function Projects() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4 text-blue-200">Proyectos</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-200">
+            Proyectos
+          </h2>
           <p className="text-blue-100/70">
             Una selección de mis proyectos más recientes y destacados
           </p>
@@ -59,26 +80,56 @@ export function Projects() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-blue-200">{project.title}</CardTitle>
-                  <CardDescription className="text-blue-100/70">{project.description}</CardDescription>
+                  <CardTitle className="text-blue-200">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-blue-100/70">
+                    {project.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="bg-blue-500/10 text-blue-200">
+                      <Badge
+                        key={tagIndex}
+                        variant="secondary"
+                        className="bg-blue-500/10 text-blue-200"
+                      >
                         {tag}
                       </Badge>
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <Button variant="outline" size="sm" className="border-blue-500/50 hover:bg-blue-500/10">
-                      <Github className="mr-2 h-4 w-4" />
-                      Código
-                    </Button>
-                    <Button variant="outline" size="sm" className="border-blue-500/50 hover:bg-blue-500/10">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </Button>
+                    {/* Botón Código */}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-blue-500/50 hover:bg-blue-500/10"
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        Código
+                      </Button>
+                    </a>
+                    {/* Botón Demo */}
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-blue-500/50 hover:bg-blue-500/10"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Demo
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
